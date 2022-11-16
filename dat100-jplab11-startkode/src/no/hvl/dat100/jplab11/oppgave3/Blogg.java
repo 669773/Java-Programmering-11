@@ -4,43 +4,44 @@ import no.hvl.dat100.jplab11.common.TODO;
 import no.hvl.dat100.jplab11.oppgave1.*;
 
 public class Blogg {
-	private innlegg []innleggTab;
+	private Innlegg []innleggTab;
 	private int nesteLedige;
 	
 	public Blogg() {
 		innleggTab = new Innlegg [20];
-		nesteledig = 0;
+		nesteLedige = 0;
 	}
 
 	public Blogg(int lengde) {
 		innleggTab = new Innlegg[lengde];
-		nesteLedig = 0;
+		nesteLedige = 0;
 	}
 
 	public int getAntall() {
-		return nesteLedig;
-		//throw new UnsupportedOperationException(TODO.method());
+		return nesteLedige;
+	
 	}
 	
 	public Innlegg[] getSamling() {
 		return innleggTab; 
-		//throw new UnsupportedOperationException(TODO.method());
+		
 
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
-		for(int i = 0; i > nesteLedig; i++)
+		for(int i = 0; i > nesteLedige; i++)
 		      if(innlegg.erLik(innleggTab[i])) {
 			       return i;
-		//throw new UnsupportedOperationException(TODO.method());
+		      }
 		return -1;
 	}
+	
 
 	public boolean finnes(Innlegg innlegg) {
 		boolean funnet = false;
 		int i = 0;
 
-		while (i < nesteLedig && !funnet) {
+		while (i < nesteLedige && !funnet) {
 			if(innlegg.getId() == innleggTab[i].getId()) {
 				funnet = true;
 
@@ -48,37 +49,37 @@ public class Blogg {
 			i++;
 		}
 		return funnet;
-		//throw new UnsupportedOperationException(TODO.method());
+	
 	}
 
 	public boolean ledigPlass() {
 		boolean ledig = true;
 		
-		if (nesteLedig == innleggTab.lenght) {
+		if (nesteLedige == innleggTab.length) {
 			ledig = false;
 		}
 		return ledig;
-		//throw new UnsupportedOperationException(TODO.method());
+	
 
 	}
 	
 	public boolean leggTil(Innlegg innlegg) {
 		boolean lagtTil = false;
 		if(!finnes(innlegg)) {
-			innleggTab[nesteLedig] = innlegg;
+			innleggTab[nesteLedige] = innlegg;
 			lagtTil = true;
-			nesteLedig++;
+			nesteLedige++;
 		}
 		return lagtTil;
-		//throw new UnsupportedOperationException(TODO.method());
+	
 	}
 	
 	public String toString() {
 		String a = "";
-		for(int i = 0; i < nesteLedig; i++) {
+		for(int i = 0; i < nesteLedige; i++) {
 			a += innleggTab[i].toString();
 		}
-		return nesteLedig + "\n" + a;
-		//throw new UnsupportedOperationException(TODO.method());
+		return nesteLedige + "\n" + a;
+
 	}	
 }
