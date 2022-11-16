@@ -71,6 +71,14 @@ public abstract class Innlegg {
 		//throw new UnsupportedOperationException(TODO.method());
 	}
 	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public void setLikes(int likes) {
+		this.likes = likes;
+	}
+	
 	public boolean erLik(Innlegg innlegg) {
 		return this.id == innlegg.id;
 		//throw new UnsupportedOperationException(TODO.method());
