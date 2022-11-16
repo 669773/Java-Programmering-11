@@ -88,7 +88,7 @@ public abstract class Innlegg {
 	@Override
 	public String toString() {
 		
-		String tekst = id + "\n" + dato + "\n" + likes + "\n";
+		String tekst = id + "\n" + bruker +"\n" + dato + "\n" + likes + "\n";
 		return tekst;
 		//throw new UnsupportedOperationException(TODO.method());
 				
